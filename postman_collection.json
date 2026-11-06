@@ -1,0 +1,97 @@
+{
+  "info": {
+    "_postman_id": "controle-financeiro-collection",
+    "name": "Controle Financeiro Pessoal API",
+    "description": "Coleção de testes para a API RESTful de Controle Financeiro Pessoal (NestJS + MongoDB)",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "item": [
+    {
+      "name": "Cadastrar Receita (POST /transacoes)",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"descricao\": \"Salário Mensal\",\n  \"valor\": 3500.00,\n  \"tipo\": \"receita\",\n  \"categoria\": \"Trabalho\",\n  \"consumoConsciente\": true\n}"
+        },
+        "url": {
+          "raw": "http://localhost:3000/transacoes",
+          "protocol": "http",
+          "host": ["localhost"],
+          "port": "3000",
+          "path": ["transacoes"]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Cadastrar Despesa Essencial (POST /transacoes)",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"descricao\": \"Conta de Luz\",\n  \"valor\": 150.00,\n  \"tipo\": \"despesa\",\n  \"categoria\": \"Moradia\",\n  \"consumoConsciente\": true\n}"
+        },
+        "url": {
+          "raw": "http://localhost:3000/transacoes",
+          "protocol": "http",
+          "host": ["localhost"],
+          "port": "3000",
+          "path": ["transacoes"]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Cadastrar Gasto por Impulso (POST /transacoes)",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"descricao\": \"Compra de Roupas\",\n  \"valor\": 200.00,\n  \"tipo\": \"despesa\",\n  \"categoria\": \"Lazer\",\n  \"consumoConsciente\": false\n}"
+        },
+        "url": {
+          "raw": "http://localhost:3000/transacoes",
+          "protocol": "http",
+          "host": ["localhost"],
+          "port": "3000",
+          "path": ["transacoes"]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Listar Histórico e Métricas (GET /transacoes)",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:3000/transacoes",
+          "protocol": "http",
+          "host": ["localhost"],
+          "port": "3000",
+          "path": ["transacoes"]
+        }
+      },
+      "response": []
+    }
+  ]
+}
